@@ -35,16 +35,55 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ## Features
 
-Add features ...
+### Login
+
+TBD...
+
+### Users search
+
+TBD...
+
+### Accounts search
+
+TBD...
+
+### Account team members operations history
+
+TBD...
 
 ## TODOs
 
+### Router
+
+- Define routes (miercoles)
+- Implement router at least 1 route (miercoles)
+
+### Redux
+
+- Define state management and architecture. (ok)
+  - Actions
+  - Reducers
+  - Async actions (Async thunk)
+- Define Auth reducer with login action
+- Define users reducer
+- Define accounts
+- Define operations
+
+## MUI
+
+- Design pages content
+
 ### Login
 
-- Design modal form
-- Implement api service
+- Design form (miercoles)
+
+### Landing page
+
+- Design page (miercoles?)
 
 ### Profile page
+
+- Design page
 
 ### Users page
 
