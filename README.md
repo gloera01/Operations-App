@@ -90,3 +90,7 @@ TBD...
 ### Accounts page
 
 ### Operations history
+
+## Service layer
+
+Explore the aproach to use api pattern instead services
