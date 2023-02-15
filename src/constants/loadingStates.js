@@ -1,4 +1,6 @@
 export const IDLE = 'idle';
 export const PENDING = 'pending';
 
-export default { IDLE, PENDING };
+const loadingStates = { IDLE, PENDING };
+
+export default loadingStates;
