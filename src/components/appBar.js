@@ -10,7 +10,7 @@ const TopBar = () => {
   const { user } = useSelector((store) => store.auth);
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="fixed" color="transparent">
         <Toolbar>
           <Typography sx={{ flexGrow: 1 }}>
             <Link to="/">App Icon</Link>
