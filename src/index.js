@@ -1,22 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './App';
-
-import { Provider } from 'react-redux';
-
-import store from './store';
-
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import store from './store';
+
+import App from './App';
+import Landing from './pages/landing';
+import Profile from './pages/profile';
+import NotFound from './pages/notFound';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Landing />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
     <React.StrictMode>
-      <App />
+      <RouterProvider router={router} />
     </React.StrictMode>
   </Provider>,
 );
