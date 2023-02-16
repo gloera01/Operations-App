@@ -55,8 +55,14 @@ TBD...
 
 ### Router
 
-- Define routes (miercoles)
-- Implement router at least 1 route (miercoles)
+- Define routes (ok)
+  - index (/)
+  - profile
+  - users
+  - accounts
+  - accounts/:accountId/history
+- Implement router at least 1 route (ok)
+- Create private route component
 
 ### Redux
 
@@ -64,7 +70,7 @@ TBD...
   - Actions
   - Reducers
   - Async actions (Async thunk)
-- Define Auth reducer with login action
+- Define Auth reducer with login action (ok)
 - Define users reducer
 - Define accounts
 - Define operations
@@ -73,17 +79,33 @@ TBD...
 
 - Design pages content
 
+### Top bar (ok)
+
+- Create component
+- Add functionality
+
 ### Login
 
-- Design form (miercoles)
+- Create component (jueves)
+- Add functionality (jueves)
 
 ### Landing page
 
-- Design page (miercoles?)
+- Design page (jueves)
+- Create component
+- Add functionality
+
+### Dashboard
+
+- Design page (jueves)
+- Create component
+- Add functionality
 
 ### Profile page
 
 - Design page
+- Create component
+- Add functionality
 
 ### Users page
 
