@@ -1,20 +1,16 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-// import Router, etc
-// import routes
-// import pages
-// import components
-
-import { Button } from '@mui/material';
+import TopBar from './components/appBar';
+import SideNav from './components/sideNav';
 
 function App() {
   return (
-    <section>
-      <h1>Operations app.</h1>
-      <Button color="secondary" variant="contained">
-        Click me
-      </Button>
-    </section>
+    <>
+      <TopBar />
+      <SideNav />
+      <Outlet />
+    </>
   );
 }
 
