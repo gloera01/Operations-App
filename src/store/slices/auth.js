@@ -5,20 +5,24 @@ import loadingStates from '../../constants/loadingStates';
 export const login = createAsyncThunk(
   'auth/login',
   async (credentials, { dispatch }) => {
+    dispatch(setLoading(loadingStates.PENDING));
+    // TODO:
     // get access token
     // set token on localstorage
     // get user profile
     // handle errors, dispatch them
-    // return user profile
+    const userProfile = { ...credentials };
+    return userProfile;
   },
 );
 
 export const logout = createAsyncThunk(
   'auth/logout',
   async (payload, { dispatch }) => {
+    dispatch(setLoading(loadingStates.PENDING));
     // set auth loading pending
     // remove token from localstorage.removeItem('authToken');
-    // set auth loading idle
+    dispatch(setLoading(loadingStates.IDLE));
   },
 );
 
@@ -27,13 +31,16 @@ const authSlice = createSlice({
   initialState: {
     loading: loadingStates.IDLE,
     user: null,
-    errors: null,
+    error: null,
   },
   reducers: {
     setLoading: (state, action) => {
       if (state.loading !== action.payload) {
         state.loading = action.payload;
       }
+    },
+    setAuthError: (state, action) => {
+      if (state.error !== action.payload) state.error = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -46,4 +53,5 @@ const authSlice = createSlice({
   },
 });
 
+export const { setLoading } = authSlice.actions;
 export default authSlice.reducer;
