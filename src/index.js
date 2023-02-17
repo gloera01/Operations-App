@@ -15,6 +15,9 @@ import App from './App';
 import Login from './pages/login';
 import Profile from './pages/profile';
 import NotFound from './pages/notFound';
+import Dashboard from './pages/dashboard';
+
+import PrivateRoute from './components/privateRoute';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +31,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'profile',
-        element: <Profile />,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'dashboard',
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
       },
     ],
   },
