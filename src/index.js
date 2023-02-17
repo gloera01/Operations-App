@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import App from './App';
-import Landing from './pages/landing';
+import Login from './pages/login';
 import Profile from './pages/profile';
 import NotFound from './pages/notFound';
 
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Landing />,
+        element: <Login />,
       },
       {
         path: 'profile',
