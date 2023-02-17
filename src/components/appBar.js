@@ -13,7 +13,7 @@ const TopBar = () => {
       <AppBar position="fixed" color="transparent">
         <Toolbar>
           <Typography sx={{ flexGrow: 1 }}>
-            <Link to="/">App Icon</Link>
+            <Link to="/dashboard">App Icon</Link>
           </Typography>
           {Boolean(user) && <AccountMenu />}
         </Toolbar>
