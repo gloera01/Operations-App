@@ -74,6 +74,7 @@ const Login = () => {
           <TextField
             variant="standard"
             label="Password"
+            type="password"
             helperText={pwd.helperText}
             error={pwd.hasError}
             onChange={onPwdChange}
