@@ -66,9 +66,10 @@ const Login = () => {
           display="flex"
           flexDirection="column"
           alignItems="center"
-          justifyContent="space-evenly"
-          minHeight={210}
+          justifyContent="space-between"
+          minHeight={250}
           minWidth={220}
+          padding={5}
         >
           <TextField
             variant="standard"
@@ -77,6 +78,7 @@ const Login = () => {
             error={email.hasError}
             onChange={onEmailChange}
             onBlur={onEmailBlur}
+            fullWidth
           />
           <TextField
             variant="standard"
@@ -86,12 +88,19 @@ const Login = () => {
             error={pwd.hasError}
             onChange={onPwdChange}
             onBlur={onPwdBlur}
+            fullWidth
           />
+          {auth.error && <Typography>{auth.error}</Typography>}
           <Button
-            disabled={auth.loading === loadingStates.PENDING}
+            disabled={
+              auth.loading === loadingStates.PENDING &&
+              pwd.hasError &&
+              email.hasError
+            }
             variant="contained"
             color="primary"
             type="submit"
+            fullWidth
           >
             Submit
           </Button>
