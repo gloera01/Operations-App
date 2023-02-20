@@ -1,24 +1,42 @@
 import axios from 'axios';
-
 import config from '../config';
 
-const onSuccess = (response) => response.data;
-
-const onError = (error) => {
-  if (error.response) {
-    return error.response.data;
+class OperationsAPI {
+  constructor() {
+    this.#client = axios.create({
+      baseURL: config.OPERATIONS_API_URL,
+      headers: { 'Content-Type': 'application/json' },
+    });
+    this.#client.interceptors.response.use(this.#onSuccess, this.#onError);
   }
 
-  return {
-    errorMessage: error.toJSON().message,
-  };
-};
+  #client = null;
 
-const operations = axios.create({
-  baseURL: config.OPERATIONS_API_URL,
-  headers: { 'Content-Type': 'application/json' },
-});
+  #onError(error) {
+    if (error.response) {
+      return error.response.data;
+    }
 
-operations.interceptors.response.use(onSuccess, onError);
+    return {
+      errorMessage: error.toJSON().message,
+    };
+  }
+  #onSuccess(response) {
+    return response.data;
+  }
 
-export default operations;
+  #setAuthToken(token) {
+    this.#client.defaults.headers.common.Authorizatino = `Bearer ${token}`;
+  }
+
+  async login(credentials) {
+    return this.#client.post('/auth/login', credentials);
+  }
+
+  async getUserProfile(email, token) {
+    this.#setAuthToken(token);
+    return this.#client.get('/users', { params: { email } });
+  }
+}
+
+export default OperationsAPI;
