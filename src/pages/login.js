@@ -15,16 +15,16 @@ const Login = () => {
   const [pwd, setPwd] = useState(initialInput);
 
   const auth = useSelector((store) => store.auth);
-  const { user } = auth;
+  const { isLoggedIn } = auth;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (user) {
+    if (isLoggedIn) {
       // logged users are now allowed to be here
       navigate('/dashboard');
     }
-  }, [user, navigate]);
+  }, [isLoggedIn, navigate]);
 
   //#region email handling section
   const onEmailChange = (e) => {
@@ -52,7 +52,6 @@ const Login = () => {
     const { payload } = await dispatch(
       login({ email: email.value, password: pwd.value }),
     );
-
     if (payload) {
       navigate('/dashboard');
     }

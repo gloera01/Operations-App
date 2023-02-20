@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
   const auth = useSelector((store) => store.auth);
-  if (!auth.user) {
+  if (!auth.loggedIn) {
     return <Navigate to="/" />;
   }
   return children;
