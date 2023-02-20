@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Paper, Button, TextField, Typography } from '@mui/material';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,8 +15,16 @@ const Login = () => {
   const [pwd, setPwd] = useState(initialInput);
 
   const auth = useSelector((store) => store.auth);
+  const { user } = auth;
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (user) {
+      // logged users are now allowed to be here
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   //#region email handling section
   const onEmailChange = (e) => {
