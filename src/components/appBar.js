@@ -7,7 +7,7 @@ import AccountMenu from './AccountMenu';
 import { useSelector } from 'react-redux';
 
 const TopBar = () => {
-  const { user } = useSelector((store) => store.auth);
+  const { loggedIn } = useSelector((store) => store.auth);
   return (
     <>
       <AppBar position="fixed" color="transparent">
@@ -15,7 +15,7 @@ const TopBar = () => {
           <Typography sx={{ flexGrow: 1 }}>
             <Link to="/dashboard">App Icon</Link>
           </Typography>
-          {Boolean(user) && <AccountMenu />}
+          {loggedIn && <AccountMenu />}
         </Toolbar>
       </AppBar>
       <Toolbar />
