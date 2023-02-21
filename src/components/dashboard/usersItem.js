@@ -23,7 +23,7 @@ const UsersItem = () => {
       <Divider />
       <Box display="flex" justifyContent="flex-end">
         <Button variant="text">
-          <Link to="/manage-accounts">GO</Link>
+          <Link to="/manage-users">GO</Link>
         </Button>
       </Box>
     </Box>

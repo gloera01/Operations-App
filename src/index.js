@@ -16,6 +16,7 @@ import Login from './pages/login';
 import Profile from './pages/profile';
 import NotFound from './pages/notFound';
 import Dashboard from './pages/dashboard';
+import Users from './pages/users';
 
 import PrivateRoute from './components/privateRoute';
 
@@ -42,6 +43,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: 'manage-users',
+        element: (
+          <PrivateRoute>
+            <Users />
           </PrivateRoute>
         ),
       },
