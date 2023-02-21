@@ -53,6 +53,12 @@ TBD...
 
 ## TODOs
 
+### Architecture
+
+#### Service and API layers
+
+Explore the aproach to use api pattern instead services
+
 ### Router
 
 - Define routes (ok)
@@ -84,35 +90,47 @@ TBD...
 - Create component
 - Add functionality
 
-### Login
+### Login page
 
-- Create component (jueves)
-- Add functionality (jueves)
+- Create component (ok)
+- Functionality
+  - inputs validation
+  - UI loading spinner
+  - connect with BE (ok)
+  - handle submit button disabled state (ok)
+    - disabled just after submitting (ok)
+    - enabled after server responds with status !== ok so users can retry (ok)
 
-### Landing page
+### Dashboard page
 
-- Design page (jueves)
-- Create component
-- Add functionality
-
-### Dashboard
-
-- Design page (jueves)
-- Create component
-- Add functionality
+- Design page (ok)
+- Create component (lunes)
+- Add functionality (ok)
+  - if user is !Auth, redirect to login (ok)
+  - navigation links (ok)
 
 ### Profile page
 
-- Design page
-- Create component
+- Design page (martes)
+- Create component (martes)
 - Add functionality
+  - Reset my pwd
 
 ### Users page
 
+- Design page (ok)
+- Create component
+  - page layout
+  - search section
+  - users table
+  - floating add button
+  - add filters modal
+  - create modal
+  - view modal
+
 ### Accounts page
 
+- Design page (wip)
+  - define view team feature into modal
+
 ### Operations history
-
-## Service layer
-
-Explore the aproach to use api pattern instead services
