@@ -26,7 +26,7 @@ class OperationsAPI {
   }
 
   #setAuthToken(token) {
-    this.#client.defaults.headers.common.Authorizatino = `Bearer ${token}`;
+    this.#client.defaults.headers.common.Authorization = `Bearer ${token}`;
   }
 
   async login(credentials) {
