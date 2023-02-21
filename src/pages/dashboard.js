@@ -9,7 +9,7 @@ const Dashboard = () => {
     <Box padding={1}>
       <Typography
         variant="h3"
-        component="h1"
+        component="h2"
         marginBottom={3}
         textAlign="center"
       >
