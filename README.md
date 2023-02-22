@@ -59,6 +59,14 @@ TBD...
 
 Explore the aproach to use api pattern instead services
 
+#### Security
+
+- Do not allow Users role to visit following pages
+  - app dashboard
+  - users page
+  - accounts page
+  - operations page
+
 ### Router
 
 - Define routes (ok)
@@ -104,15 +112,15 @@ Explore the aproach to use api pattern instead services
 ### Dashboard page
 
 - Design page (ok)
-- Create component (lunes)
+- Create component (ok)
 - Add functionality (ok)
   - if user is !Auth, redirect to login (ok)
   - navigation links (ok)
 
 ### Profile page
 
-- Design page (martes)
-- Create component (martes)
+- Design page (ok?)
+- Create component (ok)
 - Add functionality
   - Reset my pwd
 
@@ -120,17 +128,51 @@ Explore the aproach to use api pattern instead services
 
 - Design page (ok)
 - Create component
-  - page layout
-  - search section
+  - page layout (miercoles)
+  - search section (miercoles)
   - users table
   - floating add button
   - add filters modal
   - create modal
   - view modal
+- functionality
+  - search users (miercoles)
+  - create users
+  - update (?)
+  - delete (?)
 
 ### Accounts page
 
 - Design page (wip)
-  - define view team feature into modal
+  - decide page design for account details
+    - use modal with tabs
+      - account info (name, client, responsible)
+      - members (custom complex component)
+        - view (table)
+        - create
+        - delete
+      - history (custom complex component)
+        - view (table)
+    - redirect to account details page
+      - account info (card component)
+      - team members
+        - view (table)
+        - add members
+        - remove members
+      - operations history
+        - search
+        - view (table)
+- Manage accounts
+  - create
+  - read
+  - update
+  - delete
+- Manage account members
+  - create
+  - read (view)
+  - update
+  - delete
 
 ### Operations history
+
+- Search with filters
