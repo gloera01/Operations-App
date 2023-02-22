@@ -1,9 +1,14 @@
 import { Box, Button, Divider, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AssignmentInd } from '@mui/icons-material';
 import { red } from '@mui/material/colors';
 
 const AccountsItem = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/manage-accounts');
+  };
   return (
     <Box
       bgcolor={red[100]}
@@ -22,8 +27,8 @@ const AccountsItem = () => {
       </Typography>
       <Divider />
       <Box display="flex" justifyContent="flex-end">
-        <Button variant="text">
-          <Link to="/manage-accounts">GO</Link>
+        <Button variant="text" color="secondary" onClick={handleClick}>
+          GO
         </Button>
       </Box>
     </Box>
