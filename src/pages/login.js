@@ -21,7 +21,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      // logged users are now allowed to be here
+      // logged users are not allowed to be here
       navigate('/dashboard');
     }
   }, [isLoggedIn, navigate]);
