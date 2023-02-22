@@ -15,8 +15,11 @@ export const login = createAsyncThunk(
 
     const { accessToken } = loginRes.payload;
 
-    // set token on localstorage
-    localStorage.setItem('authToken', accessToken);
+    // set auth token on localstorage
+    localStorage.setItem(
+      'auth',
+      JSON.stringify({ token: accessToken, email: credentials.email }),
+    );
     return true;
   },
 );
@@ -28,6 +31,19 @@ export const logout = createAsyncThunk(
     localStorage.removeItem('authToken');
     // TODO:
     // clear state (users, accounts, operations
+  },
+);
+
+export const fetchProfile = createAsyncThunk(
+  'auth/fetchProfile',
+  async ({ email, token }) => {
+    const profileRes = await operationsApi.getUserProfile(email, token);
+    if (profileRes.statusCode !== 200) throw new Error(profileRes.errorMessage);
+
+    const {
+      docs: [profile],
+    } = profileRes.payload;
+    return profile;
   },
 );
 
@@ -68,6 +84,9 @@ const authSlice = createSlice({
       state.user = null;
       state.error = null;
       state.loading = loadingStates.IDLE;
+    });
+    builder.addCase(fetchProfile.fulfilled, (state, { payload }) => {
+      state.user = payload;
     });
   },
 });
