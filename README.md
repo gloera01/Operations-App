@@ -128,15 +128,13 @@ Explore the aproach to use api pattern instead services
 
 - Design page (ok)
 - Create component
-  - page layout (miercoles)
-  - search section (miercoles)
-  - users table
+  - search section
+    - add multiple fields for filters instead of a modal
   - floating add button
   - add filters modal
-  - create modal
-  - view modal
+  - create user modal
+  - view user modal
 - functionality
-  - search users (miercoles)
   - create users
   - update (?)
   - delete (?)
