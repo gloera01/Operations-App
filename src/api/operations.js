@@ -37,6 +37,15 @@ class OperationsAPI {
     this.#setAuthToken(token);
     return this.#client.get('/users', { params: { email } });
   }
+
+  async getUsers(filters, token) {
+    this.#setAuthToken(token);
+    const params = {};
+    if (filters.name) {
+      params.name = filters.name;
+    }
+    return this.#client.get('/users', { params });
+  }
 }
 
 export default OperationsAPI;
