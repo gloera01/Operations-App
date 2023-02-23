@@ -72,7 +72,6 @@ const Login = () => {
           padding={5}
         >
           <TextField
-            variant="standard"
             label="Email"
             helperText={email.helperText}
             error={email.hasError}
@@ -81,7 +80,6 @@ const Login = () => {
             fullWidth
           />
           <TextField
-            variant="standard"
             label="Password"
             type="password"
             helperText={pwd.helperText}
